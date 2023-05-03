@@ -62,7 +62,7 @@ export default function Textform(props) {
         </h2>
         <p>
             <b>
-            {text.split(" ").filter((element)=>{return element.length!==0}).length} words &nbsp;
+            {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words &nbsp;
 
             {text.length} characters
             </b>
