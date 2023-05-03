@@ -1,15 +1,15 @@
 import './App.css';
-// import Aboutus from './components/Aboutus';
+import Aboutus from './components/Aboutus';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import React, { useState } from 'react';
 
-// import{
-//   BrowserRouter as Router,
-//   Switch,
-//   Route,
+import{
+  BrowserRouter as Router,
+  Switch,
+  Route,
   
-// }from 'react-router-dom';
+}from 'react-router-dom';
 function App() {
 
 
@@ -29,24 +29,24 @@ function App() {
 
   return (
    <>
-  {/* <Router> */}
+  <Router>
   <Navbar title ="TextUtils" aboutText="About" HomeText="Home" mode ={mode} Darkmode={Darkmode} />
   <div className='container my-3'>
-    {/* <Switch>
+    <Switch>
         <Route exact path ='/about'>
           
-          <Aboutus/>
+          <Aboutus mode ={mode}/>
         
         </Route>
-         */}
-        {/* <Route exact path="/"> */}
+        
+        <Route exact path="/">
          
           <Textform heading="Enter your text to analyze" mode ={mode}/> 
 
-        {/* </Route> */}
-    {/* </Switch> */}
+        </Route>
+    </Switch>
   </div>
-  {/* </Router> */}
+  </Router>
   </>
   );
 }

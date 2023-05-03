@@ -48,12 +48,12 @@ export default function Textform(props) {
             <div className="mb-3">
             <textarea className="form-control" value={text} onChange={handleOnchange} style={{backgroundColor: props.mode==='dark'? 'grey':'white', color: props.mode==='dark'? 'white':'black'}} id="myBox" rows="6"></textarea>
         </div>
-        <button className="btn btn-primary" onClick={handleUPclick}>Uppercase</button>
-        <button className="btn btn-primary mx-1" onClick={handleLowerclick}>Lowlercase</button>
-        <button className="btn btn-primary mx-1" onClick={clickDLT}>Delete</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleUPclick}>Uppercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={handleLowerclick}>Lowlercase</button>
+        <button className="btn btn-primary mx-1 my-1" onClick={clickDLT}>Delete</button>
 
-        <button className="btn btn-danger mx-1" onClick={clickCLR}>All clear</button>
-        <button className="btn btn-danger mx-1" onClick={clickcopy}>Copy</button>
+        <button className="btn btn-danger mx-1 my-1" onClick={clickCLR}>All clear</button>
+        <button className="btn btn-danger mx-1 my-1" onClick={clickcopy}>Copy</button>
 
     </div>
     <div className='container my-2' style={{color: props.mode==='dark'? 'white':'black'}}>
@@ -62,13 +62,13 @@ export default function Textform(props) {
         </h2>
         <p>
             <b>
-            {text.split(" ").length-1} words &nbsp;
+            {text.split(" ").filter((element)=>{return element.length!==0}).length} words &nbsp;
 
             {text.length} characters
             </b>
         </p>
         <p>
-            {0.008*(text.split(" ").length-1)} Minutes read
+            {0.008* text.split(" ").filter((element)=>{return element.length!==0}).length} Minutes read
         </p>
         <h3>Preview</h3>
         <p>{text.length>0?text:"Enter something to preview it here"}</p>
